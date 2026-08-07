@@ -298,7 +298,7 @@ function pageAbout() {
   app.innerHTML = \`
   <section class="page-hero"><div class="container"><span class="eyebrow">Our Story</span><h1>Boutique by choice. Local by heart.</h1></div></section>
   <section class="section"><div class="container split">
-    <figure class="portrait"><span class="monogram">TP</span>
+    <figure class="portrait"><img src="${TEAM.tahir}" alt="Tahir Parvaiz" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top center;">
       <figcaption><b class="serif" style="font-size:1.3rem;">Tahir Parvaiz</b><br>
       <span style="color:var(--gold);font-size:.8rem;letter-spacing:2px;text-transform:uppercase;">Broker & Owner</span></figcaption></figure>
     <div><span class="eyebrow">Meet the Broker</span>
