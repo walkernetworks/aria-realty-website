@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aria Realty Inc. | Peachtree City Real Estate Brokerage</title>
+  <meta name="description" content="Aria Realty Inc. is a boutique real estate brokerage in Peachtree City, Georgia. Search homes for sale across Fayette and Coweta County, browse our exclusive listings, and work with broker Tahir Parvaiz.">
+  <link rel="icon" href="assets/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container nav-wrap">
+    <a class="brand" href="index.html">
+      <img src="assets/logo-white.png" alt="Aria Realty Inc. logo">
+      <span class="brand-text"><b>ARIA REALTY</b><span>Peachtree City · Georgia</span></span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="listings.html">Search Homes</a></li>
+      <li><a href="listings.html?ours=true">Our Listings</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <a class="btn nav-cta" href="contact.html">Work With Us</a>
+    <button class="nav-toggle" aria-label="Menu">☰</button>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container hero-inner">
+    <span class="eyebrow">Boutique Brokerage · Est. Peachtree City</span>
+    <h1>Find your place in <em>Peachtree City</em> — where every home is a lifestyle.</h1>
+    <p class="lead">From golf-cart villages to lakefront estates, Aria Realty pairs deep local knowledge with white-glove service across Fayette and Coweta County.</p>
+
+    <form class="search-bar" id="heroSearch">
+      <select name="city">
+        <option value="">All Cities</option>
+        <option>Peachtree City</option>
+        <option>Fayetteville</option>
+        <option>Tyrone</option>
+        <option>Senoia</option>
+        <option>Newnan</option>
+        <option>Sharpsburg</option>
+      </select>
+      <select name="minPrice">
+        <option value="">Min Price</option>
+        <option value="300000">$300k</option>
+        <option value="500000">$500k</option>
+        <option value="750000">$750k</option>
+        <option value="1000000">$1M</option>
+      </select>
+      <select name="maxPrice">
+        <option value="">Max Price</option>
+        <option value="500000">$500k</option>
+        <option value="750000">$750k</option>
+        <option value="1000000">$1M</option>
+        <option value="2000000">$2M+</option>
+      </select>
+      <select name="beds">
+        <option value="">Beds</option>
+        <option value="2">2+</option>
+        <option value="3">3+</option>
+        <option value="4">4+</option>
+        <option value="5">5+</option>
+      </select>
+      <button class="btn solid" type="submit">Search</button>
+    </form>
+
+    <div class="hero-stats">
+      <div class="stat"><b>100+</b><span>Miles of cart paths</span></div>
+      <div class="stat"><b>#1</b><span>Rated GA schools nearby</span></div>
+      <div class="stat"><b>Local</b><span>Broker-owned &amp; operated</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Aria Exclusives</span>
+      <h2>Featured Listings</h2>
+      <p>Homes represented by Aria Realty Inc. — marketed with professional media, precise pricing, and quiet urgency.</p>
+    </div>
+    <div class="data-source-note" id="dataNote" hidden></div>
+    <div class="grid cols-3" id="featuredGrid"></div>
+    <div style="text-align:center; margin-top:40px;">
+      <a class="btn" href="listings.html">Browse All Homes On The Market</a>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="background: var(--bg-2);">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Neighborhood Guide</span>
+      <h2>The Villages of Peachtree City</h2>
+      <p>Each village has its own schools, parks, and personality — all linked by the city's famous golf-cart path network.</p>
+    </div>
+    <div class="grid cols-4">
+      <a class="tile" href="listings.html?keyword=Kedron"><div class="bg"></div><div class="label"><b>Kedron</b><span>Executive homes · Kedron Village shops</span></div></a>
+      <a class="tile" href="listings.html?keyword=Glenloch"><div class="bg"></div><div class="label"><b>Glenloch</b><span>Established charm · Lake Peachtree</span></div></a>
+      <a class="tile" href="listings.html?keyword=Braelinn"><div class="bg"></div><div class="label"><b>Braelinn</b><span>Golf &amp; green space · top schools</span></div></a>
+      <a class="tile" href="listings.html?keyword=Wilksmoor"><div class="bg"></div><div class="label"><b>Wilksmoor</b><span>New construction · Line Creek</span></div></a>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Why Aria</span>
+      <h2>A different standard of representation</h2>
+    </div>
+    <div class="grid cols-3">
+      <div class="feature"><div class="ico">01</div><h3>Broker-Level Service</h3><p>You work directly with the broker on every transaction — not a hand-off. Tahir Parvaiz personally oversees pricing, negotiation, and closing.</p></div>
+      <div class="feature"><div class="ico">02</div><h3>Full MLS Reach</h3><p>Search every home on the market through our MLS feed, updated continuously — the same data agents see, without leaving our site.</p></div>
+      <div class="feature"><div class="ico">03</div><h3>Local by Design</h3><p>Based in Peachtree City and focused on Fayette &amp; Coweta County. School zones, cart paths, HOA nuances — we know the details that move value.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="padding-top: 0;">
+  <div class="container">
+    <div class="cta-band">
+      <div>
+        <h2>Thinking of selling? Know what your home is worth.</h2>
+        <p>Request a complimentary, no-obligation market analysis prepared personally by our broker.</p>
+      </div>
+      <a class="btn solid" href="contact.html?subject=valuation">Request Home Valuation</a>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-logo">
+        <img src="assets/logo-white.png" alt="Aria Realty Inc.">
+        <p>Aria Realty Inc. — a boutique residential brokerage serving Peachtree City and the south metro Atlanta area.</p>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="listings.html">Search Homes</a></li>
+          <li><a href="listings.html?ours=true">Our Listings</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Areas</h4>
+        <ul>
+          <li><a href="listings.html?city=Peachtree City">Peachtree City</a></li>
+          <li><a href="listings.html?city=Fayetteville">Fayetteville</a></li>
+          <li><a href="listings.html?city=Tyrone">Tyrone</a></li>
+          <li><a href="listings.html?city=Senoia">Senoia</a></li>
+          <li><a href="listings.html?city=Newnan">Newnan</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Office</h4>
+        <p>Aria Realty Inc.<br>Peachtree City, GA 30269<br><br>Tahir Parvaiz, Broker<br><a href="contact.html">Send us a message →</a></p>
+      </div>
+    </div>
+    <div class="legal">
+      <p>Aria Realty Inc. is a licensed Georgia real estate brokerage. Tahir Parvaiz, Broker. Listing data is provided under IDX rules of the participating MLS (FMLS / Georgia MLS); information is deemed reliable but not guaranteed and should be independently verified. Listings identified with partner brokerages are courtesy of cooperating brokers via IDX.</p>
+      <p class="eho">⌂ Equal Housing Opportunity &nbsp;·&nbsp; © <span id="yr"></span> Aria Realty Inc. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="js/app.js"></script>
+<script>
+  document.getElementById('yr').textContent = new Date().getFullYear();
+  document.getElementById('heroSearch').addEventListener('submit', (e) => {
+    e.preventDefault();
+    const qs = new URLSearchParams(new FormData(e.target));
+    [...qs.keys()].forEach(k => { if (!qs.get(k)) qs.delete(k); });
+    location.href = 'listings.html?' + qs.toString();
+  });
+  (async () => {
+    const note = document.getElementById('dataNote');
+    note.hidden = false;
+    Aria.dataSourceNote(note);
+    const r = await Aria.search({ featured: 'true', perPage: 3 });
+    const grid = document.getElementById('featuredGrid');
+    grid.innerHTML = r.listings.map(Aria.card).join('') || '<p class="empty">Featured listings coming soon.</p>';
+  })();
+</script>
+</body>
+</html>

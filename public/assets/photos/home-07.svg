@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 600">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#101d33"/><stop offset="0.7" stop-color="#27486e"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.72" cy="0.38" r="0.35">
+      <stop offset="0" stop-color="#8fb4d9" stop-opacity="0.9"/><stop offset="1" stop-color="#8fb4d9" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="960" height="600" fill="url(#sky)"/>
+  <rect width="960" height="600" fill="url(#glow)"/>
+  <circle cx="690" cy="228" r="34" fill="#8fb4d9" opacity="0.95"/>
+  <ellipse cx="480" cy="560" rx="620" ry="90" fill="#0c1828"/>
+  <ellipse cx="140" cy="330" rx="90" ry="55" fill="#0a1526" opacity="0.85"/>
+  <rect x="132" y="330" width="14" height="130" fill="#0a1526" opacity="0.85"/>
+  <ellipse cx="850" cy="350" rx="75" ry="48" fill="#0a1526" opacity="0.85"/>
+  <rect x="843" y="350" width="12" height="115" fill="#0a1526" opacity="0.85"/>
+  
+    <g fill="#0a1526" stroke="#c9a35c" stroke-width="2.5">
+      <rect x="230" y="340" width="520" height="170"/>
+      <polygon points="210,340 350,240 490,340"/>
+      <polygon points="470,340 610,255 750,340"/>
+      <rect x="450" y="400" width="75" height="110" fill="#c9a35c" opacity="0.85"/>
+      <rect x="280" y="380" width="60" height="55" fill="#e8d5ae" opacity="0.7"/>
+      <rect x="360" y="380" width="60" height="55" fill="#e8d5ae" opacity="0.7"/>
+      <rect x="580" y="380" width="60" height="55" fill="#e8d5ae" opacity="0.7"/>
+      <rect x="660" y="380" width="60" height="55" fill="#e8d5ae" opacity="0.7"/>
+    </g>
+  <text x="480" y="575" text-anchor="middle" font-family="Georgia, serif" font-size="17" fill="#c9a35c" opacity="0.75" letter-spacing="3">ARIA REALTY · SAMPLE LISTING PHOTO</text>
+</svg>

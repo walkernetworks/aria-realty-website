@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 600">
+  <rect width="960" height="600" fill="#0f1a2c"/>
+  <polygon points="0,0 260,120 260,480 0,600" fill="#0b1424"/>
+  <polygon points="960,0 700,120 700,480 960,600" fill="#0b1424"/>
+  <rect x="260" y="120" width="440" height="360" fill="#18263e" stroke="#b78e45" stroke-width="2"/>
+  <rect x="300" y="160" width="160" height="240" fill="#b78e45" opacity="0.25"/>
+  <rect x="500" y="160" width="160" height="240" fill="#b78e45" opacity="0.18"/>
+  <line x1="260" y1="480" x2="0" y2="600" stroke="#b78e45" stroke-width="2" opacity="0.5"/>
+  <line x1="700" y1="480" x2="960" y2="600" stroke="#b78e45" stroke-width="2" opacity="0.5"/>
+  <circle cx="480" cy="90" r="6" fill="#b78e45"/>
+  <line x1="480" y1="0" x2="480" y2="84" stroke="#b78e45" stroke-width="2"/>
+  <text x="480" y="575" text-anchor="middle" font-family="Georgia, serif" font-size="17" fill="#b78e45" opacity="0.75" letter-spacing="3">ARIA REALTY · SAMPLE INTERIOR PHOTO</text>
+</svg>

@@ -1,0 +1,5 @@
+node_modules/
+server/.env
+data/listings.json
+data/leads.jsonl
+.DS_Store

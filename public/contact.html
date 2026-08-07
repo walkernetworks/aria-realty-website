@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact | Aria Realty Inc.</title>
+  <meta name="description" content="Contact Aria Realty Inc. in Peachtree City, GA — buyer representation, home valuations, listings, and leasing.">
+  <link rel="icon" href="assets/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container nav-wrap">
+    <a class="brand" href="index.html">
+      <img src="assets/logo-white.png" alt="Aria Realty Inc. logo">
+      <span class="brand-text"><b>ARIA REALTY</b><span>Peachtree City · Georgia</span></span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="listings.html">Search Homes</a></li>
+      <li><a href="listings.html?ours=true">Our Listings</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <a class="btn nav-cta" href="contact.html">Work With Us</a>
+    <button class="nav-toggle" aria-label="Menu">☰</button>
+  </div>
+</header>
+
+<section class="page-hero">
+  <div class="container">
+    <span class="eyebrow">Contact</span>
+    <h1>Talk to the broker.</h1>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container detail-grid" style="margin:10px 0 40px;">
+    <div class="sidebar-card" style="position:static;">
+      <h3 class="serif" style="font-size:1.5rem;" id="formTitle">Send us a message</h3>
+      <p class="agent">We reply personally — usually within the hour during business hours.</p>
+      <form id="contactForm">
+        <div class="field"><label>Name</label><input name="name" required></div>
+        <div class="field"><label>Email</label><input name="email" type="email"></div>
+        <div class="field"><label>Phone</label><input name="phone" type="tel"></div>
+        <div class="field"><label>I'm interested in</label>
+          <select name="interest">
+            <option>Buying a home</option>
+            <option>Selling my home / valuation</option>
+            <option>Renting or leasing</option>
+            <option>Investment property</option>
+            <option>Something else</option>
+          </select>
+        </div>
+        <div class="field"><label>Message</label><textarea name="message" placeholder="Tell us a little about what you're looking for…"></textarea></div>
+        <button class="btn solid" style="width:100%;" type="submit">Send Message</button>
+      </form>
+    </div>
+    <div>
+      <span class="eyebrow">Office</span>
+      <h2 style="font-size:1.9rem;">Aria Realty Inc.</h2>
+      <p style="color:var(--muted); margin:14px 0 26px;">
+        Peachtree City, Georgia 30269<br>
+        Serving Fayette &amp; Coweta County<br><br>
+        <b style="color:var(--text);">Tahir Parvaiz</b> — Broker &amp; Owner<br>
+        <span style="color:#5d6b80; font-size:.85rem;">(Add phone, email &amp; street address before launch — placeholders are marked in the README.)</span>
+      </p>
+      <div class="feature" style="margin-bottom:16px;"><h3>Prefer to talk now?</h3><p>Call or text the office line and you'll reach a licensed broker, not a call center.</p></div>
+      <div class="feature"><h3>Selling your home?</h3><p>Ask for a complimentary market analysis — a room-by-room, comp-by-comp valuation prepared personally by the broker.</p></div>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="legal">
+      <p>Aria Realty Inc. is a licensed Georgia real estate brokerage. Tahir Parvaiz, Broker.</p>
+      <p class="eho">⌂ Equal Housing Opportunity · © <span id="yr">2026</span> Aria Realty Inc. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="js/app.js"></script>
+<script>
+  document.getElementById('yr').textContent = new Date().getFullYear();
+  if (new URLSearchParams(location.search).get('subject') === 'valuation') {
+    document.getElementById('formTitle').textContent = 'Request a home valuation';
+    document.querySelector('select[name="interest"]').value = 'Selling my home / valuation';
+  }
+  document.getElementById('contactForm').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const data = Object.fromEntries(new FormData(e.target).entries());
+    data.message = '[' + (data.interest || 'General') + '] ' + (data.message || '');
+    const ok = await Aria.sendLead(data);
+    e.target.outerHTML = ok
+      ? '<div class="form-success">Message received — we\'ll be in touch shortly. Thank you!</div>'
+      : '<div class="form-success">Thanks! Our message service isn\'t connected on this preview — please email <b>info@ariarealty.com</b> and we\'ll respond right away.</div>';
+  });
+</script>
+</body>
+</html>
