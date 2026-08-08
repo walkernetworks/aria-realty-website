@@ -86,10 +86,10 @@ const html = `<!DOCTYPE html>
         <li><a href="#/listings?city=Tyrone">Tyrone</a></li>
         <li><a href="#/listings?city=Senoia">Senoia</a></li>
         <li><a href="#/listings?city=Newnan">Newnan</a></li></ul></div>
-      <div><h4>Office</h4><p>Aria Realty Inc.<br>Peachtree City, GA 30269<br><br>Tahir Parvaiz, Broker<br><a href="#/contact">Send us a message →</a></p></div>
+      <div><h4>Office</h4><p>Aria Realty Inc.<br>Peachtree City, GA 30269<br>Serving Georgia & Florida<br><br>Tahir Parvaiz, Broker<br>Georgia License #255711<br><a href="#/contact">Send us a message →</a></p></div>
     </div>
     <div class="legal">
-      <p>Aria Realty Inc. is a real estate brokerage licensed in Georgia and Florida, established in Georgia. Tahir Parvaiz, Broker. Listing data is provided under IDX rules of the participating MLS (FMLS / Georgia MLS); information is deemed reliable but not guaranteed and should be independently verified. Listings identified with partner brokerages are courtesy of cooperating brokers via IDX.</p>
+      <p>Aria Realty Inc. is a real estate brokerage licensed in Georgia and Florida, established in Georgia. Tahir Parvaiz, Broker — Georgia License #255711. <!-- FL license # to be added when issued --> Listing data is provided under IDX rules of the participating MLS (FMLS / Georgia MLS); information is deemed reliable but not guaranteed and should be independently verified. Listings identified with partner brokerages are courtesy of cooperating brokers via IDX.</p>
       <p class="eho">⌂ Equal Housing Opportunity · © ${new Date().getFullYear()} Aria Realty Inc. All rights reserved.</p>
     </div>
   </div>
