@@ -336,7 +336,7 @@ function pageAbout() {
 function pageContact() {
   app.innerHTML = \`
   <section class="page-hero"><div class="container"><span class="eyebrow">Contact</span><h1>Talk to the broker.</h1></div></section>
-  <section class="section"><div class="container detail-grid" style="margin:10px 0 40px;">
+  <section class="section"><div class="container detail-grid" style="margin:10px auto 40px;">
     <div class="sidebar-card" style="position:static;">
       <h3 class="serif" style="font-size:1.5rem;">Send us a message</h3>
       <p class="agent">We reply personally — usually within the hour during business hours.</p>
