@@ -51,7 +51,7 @@ const html = `<!DOCTYPE html>
   <div class="container nav-wrap">
     <a class="brand" href="#/home">
       <img src="${logoUri}" alt="Aria Realty Inc. logo">
-      <span class="brand-text"><b>ARIA REALTY</b><span>Peachtree City · Georgia</span></span>
+      <span class="brand-text"><b>ARIA REALTY</b><span>Georgia · Florida</span></span>
     </a>
     <ul class="nav-links">
       <li><a href="#/home" data-nav="home">Home</a></li>
@@ -73,7 +73,7 @@ const html = `<!DOCTYPE html>
     <div class="footer-grid">
       <div class="footer-logo">
         <img src="${logoUri}" alt="Aria Realty Inc.">
-        <p>Aria Realty Inc. — a boutique residential brokerage serving Peachtree City and the south metro Atlanta area.</p>
+        <p>Aria Realty Inc. — a broker-owned brokerage established in Georgia, serving Georgia & Florida. Residential and commercial real estate plus property management, based in Peachtree City and metro Atlanta.</p>
       </div>
       <div><h4>Explore</h4><ul>
         <li><a href="#/listings">Search Homes</a></li>
@@ -89,7 +89,7 @@ const html = `<!DOCTYPE html>
       <div><h4>Office</h4><p>Aria Realty Inc.<br>Peachtree City, GA 30269<br><br>Tahir Parvaiz, Broker<br><a href="#/contact">Send us a message →</a></p></div>
     </div>
     <div class="legal">
-      <p>Aria Realty Inc. is a licensed Georgia real estate brokerage. Tahir Parvaiz, Broker. Listing data is provided under IDX rules of the participating MLS (FMLS / Georgia MLS); information is deemed reliable but not guaranteed and should be independently verified. Listings identified with partner brokerages are courtesy of cooperating brokers via IDX.</p>
+      <p>Aria Realty Inc. is a real estate brokerage licensed in Georgia and Florida, established in Georgia. Tahir Parvaiz, Broker. Listing data is provided under IDX rules of the participating MLS (FMLS / Georgia MLS); information is deemed reliable but not guaranteed and should be independently verified. Listings identified with partner brokerages are courtesy of cooperating brokers via IDX.</p>
       <p class="eho">⌂ Equal Housing Opportunity · © ${new Date().getFullYear()} Aria Realty Inc. All rights reserved.</p>
     </div>
   </div>
@@ -141,9 +141,9 @@ function pageHome() {
   const featured = filterLocal({ featured: "true" }).slice(0, 3);
   app.innerHTML = \`
   <section class="hero"><div class="container hero-inner">
-    <span class="eyebrow">Boutique Brokerage · Est. Peachtree City</span>
-    <h1>Find your place in <em>Peachtree City</em> — where every home is a lifestyle.</h1>
-    <p class="lead">From golf-cart villages to lakefront estates, Aria Realty pairs deep local knowledge with white-glove service across Fayette and Coweta County.</p>
+    <span class="eyebrow">Based in Peachtree City · Metro Atlanta</span>
+    <h1>Real estate across <em>Georgia & Florida</em> — residential and commercial.</h1>
+    <p class="lead">Aria Realty Inc. represents buyers and sellers statewide and manages property on their behalf. Established in Georgia, licensed in Florida, and run at broker level on every transaction.</p>
     <form class="search-bar" id="heroSearch">
       <select name="city"><option value="">All Cities</option><option>Peachtree City</option><option>Fayetteville</option><option>Tyrone</option><option>Senoia</option><option>Newnan</option></select>
       <select name="minPrice"><option value="">Min Price</option><option value="300000">$300k</option><option value="500000">$500k</option><option value="750000">$750k</option><option value="1000000">$1M</option></select>
@@ -152,8 +152,8 @@ function pageHome() {
       <button class="btn solid" type="submit">Search</button>
     </form>
     <div class="hero-stats">
-      <div class="stat"><b>100+</b><span>Miles of cart paths</span></div>
-      <div class="stat"><b>#1</b><span>Rated GA schools nearby</span></div>
+      <div class="stat"><b>GA & FL</b><span>Licensed in two states</span></div>
+      <div class="stat"><b>Full-Service</b><span>Residential · Commercial · Management</span></div>
       <div class="stat"><b>Local</b><span>Broker-owned & operated</span></div>
     </div>
   </div></section>
@@ -165,6 +165,16 @@ function pageHome() {
     <div style="text-align:center;margin-top:40px;"><a class="btn" href="#/listings">Browse All Homes On The Market</a></div>
   </div></section>
   <section class="section" style="background:var(--bg-2);"><div class="container">
+    <div class="section-head"><span class="eyebrow">What We Do</span><h2>Three ways we work with clients</h2>
+    <p>Aria Realty Inc. is a full-service brokerage — the same broker-level attention whether you're buying a first home, trading a commercial building, or handing us the keys to an investment property.</p></div>
+    <div class="grid cols-3">
+      <div class="feature"><div class="ico">01</div><h3>Residential</h3><p>Buyer and seller representation across Georgia and Florida — single-family, townhomes, condos, new construction, and land. Pricing strategy, negotiation, and closing oversight from the broker directly.</p></div>
+      <div class="feature"><div class="ico">02</div><h3>Commercial</h3><p>Retail, office, industrial, multifamily, and investment property. Acquisition and disposition, leasing, site selection, and market analysis for owners, tenants, and investors.</p></div>
+      <div class="feature"><div class="ico">03</div><h3>Property Management</h3><p>Full-service management for residential and commercial owners — tenant placement and screening, rent collection, maintenance coordination, inspections, and owner reporting.</p></div>
+    </div>
+    <div style="text-align:center;margin-top:40px;"><a class="btn" href="#/contact">Talk To Us About Your Property</a></div>
+  </div></section>
+  <section class="section"><div class="container">
     <div class="section-head"><span class="eyebrow">Neighborhood Guide</span><h2>The Villages of Peachtree City</h2>
     <p>Each village has its own schools, parks, and personality — all linked by the city's famous golf-cart path network.</p></div>
     <div class="grid cols-4">
@@ -174,12 +184,12 @@ function pageHome() {
       <a class="tile" href="#/listings?keyword=Wilksmoor"><div class="bg"></div><div class="label"><b>Wilksmoor</b><span>New construction · Line Creek</span></div></a>
     </div>
   </div></section>
-  <section class="section"><div class="container">
+  <section class="section" style="background:var(--bg-2);"><div class="container">
     <div class="section-head"><span class="eyebrow">Why Aria</span><h2>A different standard of representation</h2></div>
     <div class="grid cols-3">
       <div class="feature"><div class="ico">01</div><h3>Broker-Level Service</h3><p>You work directly with the broker on every transaction — not a hand-off. Tahir Parvaiz personally oversees pricing, negotiation, and closing.</p></div>
       <div class="feature"><div class="ico">02</div><h3>Full MLS Reach</h3><p>Search every home on the market through our MLS feed, updated continuously — the same data agents see, without leaving our site.</p></div>
-      <div class="feature"><div class="ico">03</div><h3>Local by Design</h3><p>Based in Peachtree City and focused on Fayette & Coweta County. School zones, cart paths, HOA nuances — we know the details that move value.</p></div>
+      <div class="feature"><div class="ico">03</div><h3>Local Base, Wide Reach</h3><p>Rooted in Peachtree City and metro Atlanta, licensed across Georgia and Florida. Local detail where it moves value, statewide coverage when you need it.</p></div>
     </div>
   </div></section>
   <section class="section" style="padding-top:0;"><div class="container">
@@ -296,7 +306,7 @@ function pageDetail(key) {
 
 function pageAbout() {
   app.innerHTML = \`
-  <section class="page-hero"><div class="container"><span class="eyebrow">Our Story</span><h1>Boutique by choice. Local by heart.</h1></div></section>
+  <section class="page-hero"><div class="container"><span class="eyebrow">Our Story</span><h1>Boutique by choice. Statewide by design.</h1></div></section>
   <section class="section"><div class="container split">
     <figure class="portrait"><img src="${TEAM.tahir}" alt="Tahir Parvaiz" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top center;">
       <figcaption><b class="serif" style="font-size:1.3rem;">Tahir Parvaiz</b><br>
@@ -305,7 +315,8 @@ function pageAbout() {
       <h2 style="font-size:clamp(1.8rem,3vw,2.5rem);">Tahir Parvaiz</h2>
       <p style="color:var(--muted);margin-top:16px;">Aria Realty Inc. was founded on a simple conviction: buying or selling a home deserves the direct attention of a broker, not a hand-off through layers of a big-box firm. As broker and owner, Tahir personally guides every client relationship — from the first market conversation to the closing table.</p>
       <div class="quote">"My name is on the license and on the sign in the yard. That accountability changes everything about how we serve our clients."</div>
-      <p style="color:var(--muted);">Based in Peachtree City, Tahir combines sharp negotiation with deep knowledge of the local market — the village school zones, the cart-path connectivity that drives value, the HOA and new-construction landscape across Fayette and Coweta County.</p>
+      <p style="color:var(--muted);">Aria Realty was established in Georgia and works from Peachtree City and metro Atlanta, where Tahir's knowledge runs deepest — village school zones, the cart-path connectivity that drives value, the HOA and new-construction landscape across Fayette and Coweta County. From that base the firm now represents clients across all of Georgia and, licensed in Florida, throughout that market as well.</p>
+      <p style="color:var(--muted);margin-top:16px;">The work spans both sides of the market: residential buyers and sellers, commercial acquisition, disposition and leasing, and full property management for owners who would rather not field the midnight maintenance call.</p>
       <a class="btn" style="margin-top:28px;" href="#/contact">Start a Conversation</a></div>
   </div></section>
   <section class="section" style="background:var(--bg-2);"><div class="container">
@@ -315,20 +326,24 @@ function pageAbout() {
     <div class="team-grid">
       <div class="team-card"><div class="photo"><img src="${TEAM.tahir}" alt="Tahir Parvaiz"></div>
         <div class="info"><b>Tahir Parvaiz</b><span class="role">Broker & Owner</span>
-        <p class="bio">Founder of Aria Realty and the broker of record on every transaction. Tahir leads pricing strategy, negotiation, and closing oversight for buyers and sellers across Fayette & Coweta County.</p>
+        <p class="bio">Founder of Aria Realty and the broker of record on every transaction. Tahir leads pricing strategy, negotiation, and closing oversight for residential and commercial clients across Georgia and Florida.</p>
         <a href="#/contact">Contact Tahir</a></div></div>
       <div class="team-card"><div class="photo"><img src="${TEAM.tana}" alt="Tana Sumner"></div>
         <div class="info"><b>Tana Sumner</b><span class="role">Realtor®</span>
-        <p class="bio">Tana brings warm, detail-driven service to buyers and sellers throughout the south metro area — from first tours to closing day, she keeps every step organized and every client informed.</p>
+        <p class="bio">Tana brings warm, detail-driven service to buyers and sellers throughout Peachtree City and metro Atlanta — from first tours to closing day, she keeps every step organized and every client informed.</p>
         <a href="#/contact">Contact Tana</a></div></div>
     </div>
   </div></section>
   <section class="section"><div class="container">
-    <div class="section-head"><span class="eyebrow">What We Do</span><h2>Services</h2></div>
+    <div class="section-head"><span class="eyebrow">What We Do</span><h2>Services</h2>
+    <p>Residential and commercial representation plus property management — across Georgia and Florida.</p></div>
     <div class="grid cols-3">
       <div class="feature"><div class="ico">B</div><h3>Buyer Representation</h3><p>Full MLS access, private tours, offer strategy, and negotiation — with a broker who knows what homes actually close for in each village.</p></div>
       <div class="feature"><div class="ico">S</div><h3>Listing & Marketing</h3><p>Precision pricing, professional photography and media, MLS syndication to every major portal, and hands-on negotiation to net you more.</p></div>
-      <div class="feature"><div class="ico">L</div><h3>Leasing & Investment</h3><p>Rental listings, tenant placement, and investment guidance for owners across the south metro market.</p></div>
+      <div class="feature"><div class="ico">C</div><h3>Commercial Real Estate</h3><p>Retail, office, industrial, and multifamily. Acquisition and disposition, landlord and tenant representation, site selection, and market analysis.</p></div>
+      <div class="feature"><div class="ico">M</div><h3>Property Management</h3><p>Tenant placement and screening, rent collection, maintenance coordination, periodic inspections, and clear monthly owner reporting.</p></div>
+      <div class="feature"><div class="ico">L</div><h3>Leasing</h3><p>Rental listings and tenant placement for residential and commercial owners, with lease preparation and renewal handled end to end.</p></div>
+      <div class="feature"><div class="ico">I</div><h3>Investment Advisory</h3><p>Acquisition analysis, rent and yield modeling, and portfolio guidance for investors building in the Georgia and Florida markets.</p></div>
     </div>
   </div></section>\`;
 }
@@ -346,14 +361,15 @@ function pageContact() {
         <div class="field"><label>Phone</label><input name="phone" type="tel"></div>
         <div class="field"><label>I'm interested in</label><select name="interest">
           <option>Buying a home</option><option>Selling my home / valuation</option>
-          <option>Renting or leasing</option><option>Investment property</option><option>Something else</option></select></div>
+          <option>Renting or leasing</option><option>Commercial property</option>
+          <option>Property management</option><option>Investment property</option><option>Something else</option></select></div>
         <div class="field"><label>Message</label><textarea name="message" placeholder="Tell us a little about what you're looking for…"></textarea></div>
         <button class="btn solid" style="width:100%;" type="submit">Send Message</button>
       </form>
     </div>
     <div><span class="eyebrow">Office</span>
       <h2 style="font-size:1.9rem;">Aria Realty Inc.</h2>
-      <p style="color:var(--muted);margin:14px 0 26px;">Peachtree City, Georgia 30269<br>Serving Fayette & Coweta County<br><br>
+      <p style="color:var(--muted);margin:14px 0 26px;">Peachtree City, Georgia 30269<br>Serving all of Georgia & Florida<br>Residential · Commercial · Property Management<br><br>
       <b style="color:var(--text);">Tahir Parvaiz</b> — Broker & Owner<br>
       <span style="color:#5d6b80;font-size:.85rem;">(Phone, email & street address added before launch.)</span></p>
       <div class="feature" style="margin-bottom:16px;"><h3>Prefer to talk now?</h3><p>Call or text the office line and you'll reach a licensed broker, not a call center.</p></div>
