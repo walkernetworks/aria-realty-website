@@ -82,7 +82,32 @@ address hidden.
 
 ## Leads
 
-Form submissions (contact, valuation, showing requests) are appended to `data/leads.jsonl`. To get them by email instead, forward that file's entries with any cron/email service, or ask your developer to add an SMTP call in `server/server.js` (`/api/leads` route — it's ~20 lines).
+Form submissions (contact, valuation, showing requests) are **emailed to you** and also
+appended to `data/leads.jsonl` as a backstop.
+
+Email goes through [Resend](https://resend.com) (free for 3,000/month) via
+`server/mailer.js` — no extra npm dependencies, it uses Node's built-in `fetch`.
+
+**To turn it on:**
+
+1. Create a Resend account.
+2. **Domains → Add Domain → `ariarealtyinc.com`**, then add the SPF and DKIM DNS
+   records it gives you at your registrar. Verification takes a few minutes.
+3. **API Keys → Create API Key** with sending access.
+4. Set `RESEND_API_KEY`, `LEAD_EMAIL_TO` and `LEAD_EMAIL_FROM` — in `server/.env`
+   locally, and under **Environment** in the Render dashboard for the live site.
+
+`LEAD_EMAIL_FROM` must be on the verified domain or Resend rejects the send.
+`LEAD_EMAIL_TO` takes a comma-separated list if several people should get leads.
+Replies go straight to the enquirer — the lead's own address is set as `reply_to`.
+
+**Until those variables are set**, the site still accepts leads and writes them to
+`data/leads.jsonl`, logging a warning each time. Note that Render's free tier wipes
+that file on every redeploy, so don't rely on it as storage.
+
+A lead is written to disk *before* the email is attempted, so a Resend outage or a
+misconfigured key never loses an enquiry and never shows the visitor an error — the
+failure is logged to the server console with the file to recover it from.
 
 ## Compliance notes
 

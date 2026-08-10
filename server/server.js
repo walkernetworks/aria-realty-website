@@ -5,6 +5,7 @@ const fs = require('fs');
 const path = require('path');
 const store = require('./store');
 const sync = require('./sync/sync');
+const mailer = require('./mailer');
 
 const app = express();
 app.use(express.json());
@@ -31,8 +32,8 @@ app.get('/api/cities', (req, res) => {
   res.json({ cities });
 });
 
-// Lead capture (contact / showing requests) → data/leads.jsonl
-app.post('/api/leads', (req, res) => {
+// Lead capture (contact / showing requests) → data/leads.jsonl + email notification
+app.post('/api/leads', async (req, res) => {
   const { name, email, phone, message, listingKey } = req.body || {};
   if (!name || (!email && !phone)) {
     return res.status(400).json({ error: 'Name and an email or phone number are required.' });
@@ -45,9 +46,32 @@ app.post('/api/leads', (req, res) => {
     message: String(message || '').slice(0, 2000),
     listingKey: String(listingKey || '').slice(0, 50),
   };
+
+  // Write to disk FIRST. Render's free tier wipes this file on redeploy, so it is
+  // a short-lived backstop rather than storage — but it means a lead is never lost
+  // to an email outage, and it costs nothing.
   const file = path.resolve(__dirname, process.env.LEADS_FILE || '../data/leads.jsonl');
-  fs.mkdirSync(path.dirname(file), { recursive: true });
-  fs.appendFileSync(file, JSON.stringify(lead) + '\n');
+  try {
+    fs.mkdirSync(path.dirname(file), { recursive: true });
+    fs.appendFileSync(file, JSON.stringify(lead) + '\n');
+  } catch (err) {
+    console.error('[leads] could not write to', file, '—', err.message);
+  }
+
+  // Then email. A delivery failure must not fail the request: the visitor has
+  // done nothing wrong and the lead is already on disk. Log loudly instead.
+  if (mailer.configured()) {
+    try {
+      await mailer.sendLead(lead);
+    } catch (err) {
+      console.error('[leads] EMAIL FAILED for', lead.name, '—', err.message);
+      console.error('[leads] the lead is saved in', file, '— retrieve it from there');
+    }
+  } else {
+    console.warn('[leads] email not configured — lead saved to', file, 'only.');
+    console.warn('[leads] set RESEND_API_KEY and LEAD_EMAIL_TO (see .env.example) to get notified.');
+  }
+
   res.json({ ok: true });
 });
 
