@@ -86,7 +86,7 @@ const html = `<!DOCTYPE html>
         <li><a href="#/listings?city=Tyrone">Tyrone</a></li>
         <li><a href="#/listings?city=Senoia">Senoia</a></li>
         <li><a href="#/listings?city=Newnan">Newnan</a></li></ul></div>
-      <div><h4>Office</h4><p>Aria Realty Inc.<br>Peachtree City, GA 30269<br>Serving Georgia & Florida<br><br>Tahir Parvaiz, Broker<br>Georgia License #255711<br><a href="#/contact">Send us a message →</a></p></div>
+      <div><h4>Office</h4><p>Aria Realty Inc.<br>Peachtree City, GA 30269<br>Serving Georgia & Florida<br><br><a href="tel:+17708438699">(770) 843-8699</a><br><a href="mailto:info@ariarealtyinc.com">info@ariarealtyinc.com</a><br><br>Tahir Parvaiz, Broker<br>Georgia License #255711</p></div>
     </div>
     <div class="legal">
       <p>Aria Realty Inc. is a real estate brokerage licensed in Georgia and Florida, established in Georgia. Tahir Parvaiz, Broker — Georgia License #255711. <!-- FL license # to be added when issued --> Listing data is provided under IDX rules of the participating MLS (FMLS / Georgia MLS); information is deemed reliable but not guaranteed and should be independently verified. Listings identified with partner brokerages are courtesy of cooperating brokers via IDX.</p>
@@ -370,9 +370,10 @@ function pageContact() {
     <div><span class="eyebrow">Office</span>
       <h2 style="font-size:1.9rem;">Aria Realty Inc.</h2>
       <p style="color:var(--muted);margin:14px 0 26px;">Peachtree City, Georgia 30269<br>Serving all of Georgia & Florida<br>Residential · Commercial · Property Management<br><br>
-      <b style="color:var(--text);">Tahir Parvaiz</b> — Broker & Owner<br>
-      <span style="color:#5d6b80;font-size:.85rem;">(Phone, email & street address added before launch.)</span></p>
-      <div class="feature" style="margin-bottom:16px;"><h3>Prefer to talk now?</h3><p>Call or text the office line and you'll reach a licensed broker, not a call center.</p></div>
+      <b style="color:var(--text);">Tahir Parvaiz</b> — Broker & Owner<br>Georgia License #255711</p>
+      <p style="margin:0 0 26px;"><a href="tel:+17708438699" style="color:var(--gold-2);font-size:1.15rem;">(770) 843-8699</a><br>
+      <a href="mailto:info@ariarealtyinc.com" style="color:var(--gold-2);">info@ariarealtyinc.com</a></p>
+      <div class="feature" style="margin-bottom:16px;"><h3>Prefer to talk now?</h3><p>Call or text <a href="tel:+17708438699" style="color:var(--gold-2);">(770) 843-8699</a> and you'll reach a licensed broker, not a call center.</p></div>
       <div class="feature"><h3>Selling your home?</h3><p>Ask for a complimentary market analysis — prepared personally by the broker.</p></div>
     </div>
   </div></section>\`;

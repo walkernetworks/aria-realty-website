@@ -74,6 +74,6 @@
     const ok = await Aria.sendLead(data);
     e.target.outerHTML = ok
       ? `<div class="form-success">Request received — we'll reach out shortly to confirm your tour.</div>`
-      : `<div class="form-success">Almost there — email us at <b>info@ariarealty.com</b> or call the office to confirm your tour of ${l.UnparsedAddress}.</div>`;
+      : `<div class="form-success">Almost there — email us at <b>info@ariarealtyinc.com</b> or call the office to confirm your tour of ${l.UnparsedAddress}.</div>`;
   });
 })();

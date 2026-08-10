@@ -64,11 +64,20 @@ Static-only hosting (Netlify/Vercel static) also works for previewing `public/` 
 
 ## Before launch — fill in the placeholders
 
-- [ ] Office **phone number, email, street address** (contact.html, footers)
-- [ ] Real photo of Tahir for the About page (replaces the "TP" monogram)
-- [ ] Georgia license numbers (broker + firm) in the footer if desired
-- [ ] `info@ariarealty.com` placeholder email in `listing.js` / `contact.html`
+- [x] Office **phone and email** — (770) 843-8699 / info@ariarealtyinc.com (contact.html, footers)
+- [x] Real photo of Tahir for the About page
+- [x] Georgia broker license #255711 in the footers
+- [ ] **Florida license number** — issued, number not yet supplied. Each legal
+      footer has an `<!-- FL license # ... -->` comment marking where it goes.
+      Also in `scripts/build-preview.js`.
+- [ ] Georgia **firm** license number, if the brokerage wants it displayed too
 - [ ] Google Business profile / social links in the footer
+
+The office is a home office. By decision, the site shows **"Peachtree City, GA 30269"**
+only — no street address — to keep a residential address off a public, scraped page.
+Leads arrive by phone or the contact form, so nothing is lost. If a Google Business
+Profile is set up later, it can be registered as a service-area business with the
+address hidden.
 - [ ] MLS-required IDX disclosure text — each MLS supplies exact wording at approval
 
 ## Leads
