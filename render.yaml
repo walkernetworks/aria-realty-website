@@ -1,0 +1,23 @@
+services:
+  - type: web
+    name: aria-realty
+    runtime: node
+    plan: free
+    rootDir: server
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: NODE_VERSION
+        value: "20"
+      - key: BROKERAGE_OFFICE_NAME
+        value: Aria Realty Inc.
+      - key: RESO_API_BASE_URL
+        sync: false
+      - key: RESO_TOKEN_URL
+        sync: false
+      - key: RESO_CLIENT_ID
+        sync: false
+      - key: RESO_CLIENT_SECRET
+        sync: false
+      - key: RESO_ACCESS_TOKEN
+        sync: false
